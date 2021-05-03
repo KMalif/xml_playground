@@ -33,7 +33,7 @@ class APIClient {
 
 class Constant{
     companion object{
-        const val BASE_URL = "https://restfullbooks.herokuapp.com/"
+        const val BASE_URL = "https://apibarang.herokuapp.com/"
 
         fun setToken(context: Context, token : String){
             val shared = context.getSharedPreferences("TOKEN", Context.MODE_PRIVATE)
@@ -46,7 +46,7 @@ class Constant{
         fun getToken(context: Context): String{
             val shared = context.getSharedPreferences("TOKEN", Context.MODE_PRIVATE)
             val token = shared.getString("TOKEN", "UNDEFINED")
-            return token!!
+            return token.toString()
         }
 
         fun clearToken(context: Context){

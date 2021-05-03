@@ -11,6 +11,7 @@ interface APIEndpoint {
     @FormUrlEncoded
     @POST("auth/sign-up")
     fun register (
+        @Field("name") name : String,
         @Field("username")username : String,
         @Field("email")email : String,
         @Field("password")password : String): Call<SingleResponse<User>>
@@ -18,7 +19,7 @@ interface APIEndpoint {
     @FormUrlEncoded
     @POST("auth/sign-in")
     fun login(
-        @Field("email") email: String,
+        @Field("username") username: String,
         @Field("password")password: String
     ): Call<SingleResponse<User>>
 

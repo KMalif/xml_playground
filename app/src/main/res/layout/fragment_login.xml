@@ -16,16 +16,16 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/ETEmail"
+            android:id="@+id/ETUsername"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="64dp"
             android:background="@drawable/custom_input"
-            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawableStart="@drawable/ic_baseline_person_24"
             android:drawablePadding="12dp"
             android:ems="10"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
+            android:hint="@string/username"
+            android:inputType="textPersonName"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
             android:textSize="14sp"
@@ -51,7 +51,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ETEmail" />
+            app:layout_constraintTop_toBottomOf="@id/ETUsername" />
 
         <TextView
             android:id="@+id/TvForgotPassword"

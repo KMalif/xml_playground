@@ -45,7 +45,7 @@ class RegisterFragment : Fragment() {
         val email = binding.ETEmail.text.toString()
         val password = binding.EtPassword.text.toString()
 
-        APIClient.APIEndpoint().register(username, email, password).enqueue(object : Callback<SingleResponse<User>>{
+        APIClient.APIEndpoint().register(username,username, email, password).enqueue(object : Callback<SingleResponse<User>>{
             override fun onFailure(call: Call<SingleResponse<User>>, t: Throwable) {
                 println(t.message)
             }

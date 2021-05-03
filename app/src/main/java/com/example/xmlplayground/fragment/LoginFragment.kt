@@ -23,6 +23,7 @@ class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -38,6 +39,13 @@ class LoginFragment : Fragment() {
         onBtnLoginAction()
     }
 
+    private fun onBtnLoginAction(){
+        binding.BtnLogin.setOnClickListener {
+            doLogin()
+        }
+
+    }
+
     private fun isLogin(){
         val token = Constant.getToken(activity!!)
         if (!token.equals("UNDEFINED")){
@@ -46,21 +54,13 @@ class LoginFragment : Fragment() {
             })
             println("Current Token $token")
         }
-
-    }
-
-    private fun onBtnLoginAction(){
-        binding.BtnLogin.setOnClickListener {
-            doLogin()
-        }
-
     }
 
     private fun doLogin(){
-        val email = binding.ETEmail.text.toString()
+        val username = binding.ETUsername.text.toString()
         val password = binding.EtPassword.text.toString()
 
-        APIClient.APIEndpoint().login(email, password).enqueue(object :
+        APIClient.APIEndpoint().login(username, password).enqueue(object :
             Callback<SingleResponse<User>>{
             override fun onFailure(call: Call<SingleResponse<User>>, t: Throwable) {
                 println(t.message)
@@ -75,6 +75,7 @@ class LoginFragment : Fragment() {
                     if (body != null){
                         Constant.setToken(activity!!, body.data.token)
                         Toast.makeText(activity, "Hi ${body.data.username}", Toast.LENGTH_LONG).show()
+                        println("Token"+ body.data.token)
                     }else{
                         Toast.makeText(activity, "Failed to Login, please check your email or password", Toast.LENGTH_LONG).show()
                     }
