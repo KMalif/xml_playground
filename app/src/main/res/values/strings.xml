@@ -13,4 +13,9 @@
     <string name="forgot_password">Forgot your password?</string>
     <string name="name">UserName</string>
     <string name="username">Username</string>
+    <string name="homeTitle">Delicious \nfood for you</string>
+    <string name="Search">Search</string>
+    <string name="see">See more</string>
+    <string name="foodName">PlaceHolder Food Name</string>
+    <string name="foodPrice">Food Price</string>
 </resources>

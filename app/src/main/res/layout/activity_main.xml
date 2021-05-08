@@ -11,12 +11,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/base">
 
         <ImageView
             android:id="@+id/IcToggle"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             android:src="@drawable/toggle"
@@ -26,8 +27,8 @@
 
         <ImageView
             android:id="@+id/IcCart"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
             android:src="@drawable/trolley"
@@ -55,7 +56,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/base"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -65,8 +67,7 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
         android:layout_gravity="start"
-        app:menu="@menu/navigation_drawer"/>
-
-
+        app:menu="@menu/navigation_drawer"
+        />
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.xmlplayground.MainActivity
-import com.example.xmlplayground.R
 import com.example.xmlplayground.databinding.FragmentLoginBinding
 import com.example.xmlplayground.model.User
 import com.example.xmlplayground.webservice.APIClient
@@ -23,36 +22,21 @@ class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentLoginBinding.inflate(layoutInflater)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        isLogin()
         onBtnLoginAction()
+        isLogin()
+        return binding.root
     }
 
     private fun onBtnLoginAction(){
         binding.BtnLogin.setOnClickListener {
             doLogin()
-        }
-
-    }
-
-    private fun isLogin(){
-        val token = Constant.getToken(activity!!)
-        if (!token.equals("UNDEFINED")){
-            startActivity(Intent(activity, MainActivity::class.java).also {
-                activity!!.finish()
-            })
-            println("Current Token $token")
+            startActivity(Intent(activity, MainActivity::class.java))
         }
     }
 
@@ -84,6 +68,16 @@ class LoginFragment : Fragment() {
                 }
             }
         })
+    }
+
+    private fun isLogin(){
+        val token = Constant.getToken(activity!!)
+        if (!token.equals("UNDEFINED")){
+            startActivity(Intent(activity, MainActivity::class.java).also {
+                activity!!.finish()
+            })
+            println("Current Token $token")
+        }
     }
 
 }
