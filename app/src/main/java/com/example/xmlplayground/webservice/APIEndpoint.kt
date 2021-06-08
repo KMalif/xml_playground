@@ -1,10 +1,9 @@
 package com.example.xmlplayground.webservice
 
+import com.example.xmlplayground.model.Book
 import com.example.xmlplayground.model.User
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface APIEndpoint {
 
@@ -22,6 +21,9 @@ interface APIEndpoint {
         @Field("username") username: String,
         @Field("password")password: String
     ): Call<SingleResponse<User>>
+
+    @GET("books")
+    fun getAllBooks(@Header("x-access-token")token : String):Call<ListResponse<Book>>
 
 }
 

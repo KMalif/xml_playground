@@ -7,11 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.xmlplayground.R
-import com.example.xmlplayground.databinding.FragmentLoginBinding
 import com.example.xmlplayground.databinding.FragmentRegisterBinding
 import com.example.xmlplayground.model.User
 import com.example.xmlplayground.webservice.APIClient
+import com.example.xmlplayground.webservice.Constant
 import com.example.xmlplayground.webservice.SingleResponse
 import retrofit2.Call
 import retrofit2.Callback
@@ -59,6 +58,7 @@ class RegisterFragment : Fragment() {
                     if (body != null){
                         resetForm()
                         Toast.makeText(activity, "Register Success", Toast.LENGTH_LONG).show()
+                        Constant.setName(activity!!, body.data.name)
                         Log.d("Register", "onResponse: ${body.data}")
                     }
                 }else{

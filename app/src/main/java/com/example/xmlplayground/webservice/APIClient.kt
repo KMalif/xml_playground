@@ -53,5 +53,24 @@ class Constant{
             val shared = context.getSharedPreferences("TOKEN", Context.MODE_PRIVATE)
             shared.edit().clear().apply()
         }
+
+        fun setName(context: Context, name : String){
+            val shared = context.getSharedPreferences("TOKEN", Context.MODE_PRIVATE)
+            shared.edit().apply {
+                putString("NAME", name)
+                apply()
+            }
+        }
+
+        fun getName(context: Context): String{
+            val shared = context.getSharedPreferences("TOKEN", Context.MODE_PRIVATE)
+            val name = shared.getString("NAME", "UNDEFINED")
+            return name.toString()
+        }
+
+        fun clearName(context: Context){
+            val shared = context.getSharedPreferences("TOKEN", Context.MODE_PRIVATE)
+            shared.edit().clear().apply()
+        }
     }
 }

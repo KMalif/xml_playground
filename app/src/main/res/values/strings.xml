@@ -18,4 +18,9 @@
     <string name="see">See more</string>
     <string name="foodName">PlaceHolder Food Name</string>
     <string name="foodPrice">Food Price</string>
+    <string name="deliveryInfo">Delivery info</string>
+    <string name="policyHead">Return policy</string>
+    <string name="deliveryInfoDetail">Deliver between monday and friday from 9 am to 9 pm</string>
+    <string name="policyDetail">"Our foods are double checked before leaving our store so by  any case you found a broken food please contact our hotline immediately "</string>
+    <string name="addToChart">Add to cart</string>
 </resources>
